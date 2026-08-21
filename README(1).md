@@ -77,19 +77,16 @@ Additional target machines can be added to the same libvirt virtual network in f
 | 🧩 Component       | ⚙️ Configuration               |
 | ------------------ | ------------------------------ |
 | 🖥️ Host OS         | *(fill in — e.g. Ubuntu 24.04)* |
-| 🧠 Host RAM        | *(fill in)*                    |
-| ⚡ Processor       | *(fill in)*                    |
+| 🧠 Host RAM        | *(16 GB)*                        |
+| ⚡ Processor       | *(16 core)*                      |
 | 🧰 Hypervisor      | QEMU/KVM (libvirt) + virt-manager |
 | 🐉 Security OS     | Kali Linux *(version)*         |
-| 🧠 Kali RAM        | *(fill in, e.g. 2048 MB)*      |
+| 🧠 Kali RAM        | *(2048 MB)*                    |
 | 🌐 Virtual Network | libvirt NAT network (`default` or custom) |
 | 📡 Network Address | 192.168.122.0/24 *(replace with your actual subnet)* |
 | 🐧 Kali IP Address | *(fill in, e.g. 192.168.122.x)* |
 | 🚪 Default Gateway | 192.168.122.1 *(replace if custom)* |
 | 🌍 DNS Server      | 8.8.8.8 or libvirt's dnsmasq   |
-| 🔮 Future VM Range | *(fill in, e.g. .3–.99)*       |
-
-> 📝 Run `ip a` and `virsh net-dumpxml <network-name>` on your actual setup and replace the placeholders above with the real values before submitting.
 
 ---
 
@@ -229,40 +226,6 @@ DNS:
 
 ---
 
-# 🐞 Problems Encountered & Solutions
-
-Documenting problems is an important part of the project.
-
-## Problem 1. Internet Connectivity After Static IP Configuration
-
-After manually configuring IPv4 settings, Internet connectivity may fail depending on the Kali/NetworkManager configuration.
-
-One workaround used during this lab was:
-
-```bash
-sudo nmcli connection modify "Wired connection 1" ipv4.dad-timeout 0
-```
-
-The network connection was then restarted/rebooted and connectivity was tested again.
-
-> **Important:** Network interface and connection names may differ between systems. Identify your actual connection name first with `nmcli connection show` before running an `nmcli` command.
-
-## Problem 2. KVM Acceleration / Virtualization Not Available
-
-The VM may fail to start, or run extremely slowly, if hardware virtualization (Intel VT-x / AMD-V) is disabled in firmware, or if the `kvm` kernel module isn't loaded.
-
-The issue was resolved by:
-
-1. Restarting the computer.
-2. Entering BIOS/UEFI settings.
-3. Enabling Intel VT-x / AMD-V (hardware virtualization).
-4. Saving the configuration and restarting.
-5. Confirming the KVM module is loaded: `lsmod | grep kvm`.
-6. Starting the Kali VM again.
-
-*(If the issue persists, checking `dmesg` for KVM-related errors and confirming the user is in the `libvirt`/`kvm` groups is a reasonable next step — verify against your distro's docs if this doesn't resolve it.)*
-
----
 
 # 💡 What I Learned
 
