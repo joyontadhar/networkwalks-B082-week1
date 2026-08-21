@@ -84,7 +84,6 @@ Additional target machines can be added to the same libvirt virtual network in f
 | 🧠 Kali RAM        | *(2048 MB)*                    |
 | 🌐 Virtual Network | libvirt NAT network (`default` or custom) |
 | 📡 Network Address | 192.168.122.0/24 *(replace with your actual subnet)* |
-| 🐧 Kali IP Address | *(fill in, e.g. 192.168.122.x)* |
 | 🚪 Default Gateway | 192.168.122.1 *(replace if custom)* |
 | 🌍 DNS Server      | 8.8.8.8 or libvirt's dnsmasq   |
 
