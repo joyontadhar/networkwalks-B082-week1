@@ -76,7 +76,7 @@ Additional target machines can be added to the same libvirt virtual network in f
 
 | 🧩 Component       | ⚙️ Configuration               |
 | ------------------ | ------------------------------ |
-| 🖥️ Host OS         | *(fill in — e.g. Ubuntu 24.04)* |
+| 🖥️ Host OS         | *(LInux Mint)*                 |
 | 🧠 Host RAM        | *(16 GB)*                        |
 | ⚡ Processor       | *(16 core)*                      |
 | 🧰 Hypervisor      | QEMU/KVM (libvirt) + virt-manager |
@@ -152,8 +152,8 @@ Device model:   virtio (or e1000 for legacy compatibility)
 The VM was allocated:
 
 ```text
-RAM: (fill in, e.g. 2048 MB)
-vCPUs: (fill in)
+RAM: (2048 MB)
+vCPUs: (4 cores)
 ```
 
 ![](3-screenshot-kali-linux.png)
@@ -169,7 +169,7 @@ The Kali Linux network configuration was checked and, if needed, set to a consis
 Example configuration:
 
 ```text
-IP Address: (fill in, e.g. 192.168.122.x)
+IP Address: (192.168.12.20)
 Subnet Mask: 255.255.255.0
 Gateway: 192.168.122.1
 DNS: 8.8.8.8
@@ -212,16 +212,7 @@ virsh snapshot-revert kali-linux "Clean-Kali-Network-Setup"
 
 ### Example Results
 
-```text
-IP Address:
-(fill in)/24
 
-Gateway:
-(fill in)
-
-DNS:
-8.8.8.8
-```
 
 ---
 
@@ -282,4 +273,4 @@ Cybersecurity Student
 
 ## 📌 Project Information
 
-**Program/Course:** *(fill in)* | **Week:** *(fill in)* | **Project:** Cybersecurity & Pentesting Lab Setup | **Repository:** GitHub
+**Program Name:** Cybersecurity at Networkwalks | **Week:** 01 | **Project:** Cybersecurity & Pentesting Lab Setup | **Repository:** GitHub
