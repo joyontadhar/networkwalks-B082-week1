@@ -199,6 +199,10 @@ virsh snapshot-revert kali-linux "Clean-Kali-Network-Setup"
 
 ---
 
+![Screenshot 1](Screenshots/kali1.png)
+![Screenshot 2](Screenshots/kali2.png)
+
+
 # 🔎 Lab Verification
 
 | ✅ Test                        | 🧾 Command                      | 🎯 Expected Result              |
